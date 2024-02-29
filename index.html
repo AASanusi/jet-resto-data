@@ -7,6 +7,17 @@
 </head>
 <body>
     
-    <script src="script.js"></script>
+    <script src="script.js">
+        const axios = require('axios');
+
+        async function fetchDataFromExternalURL() {
+            try {
+                const response = await axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF");
+            }
+            catch {
+                console.error('Error fetching data:', error.message)
+            }
+        }
+    </script>
 </body>
 </html>
