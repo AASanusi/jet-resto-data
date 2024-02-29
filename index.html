@@ -4,22 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jet Resto Data</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+
 </head>
 <body>
     
     <script src="script.js">
-        const axios = require('axios');
 
-        async function fetchDataFromExternalURL() {
-            try {
-                const response = await axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF");
-            }
-            catch {
-                console.error('Error fetching data:', error.message)
-            }
-        }
-
-        fetchDataFromExternalURL();
+        
     </script>
 </body>
 </html>
