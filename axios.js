@@ -13,12 +13,14 @@ axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostco
         
         
 
+        for(let i=0; i < 9; i++){
+            
+        }
         
-        
-        console.log("Restaurant name: ", restaurants[0].name)
-        console.log("Cuisines: ", restaurants[0].cuisines)
-        console.log("Ratings: ", restaurants[0].rating.starRating)
-        console.log("Address: ", restaurants[0].address)
+        // console.log("Restaurant name: ", restaurants[0].name)
+        // console.log("Cuisines: ", restaurants[0].cuisines)
+        // console.log("Ratings: ", restaurants[0].rating.starRating)
+        // console.log("Address: ", restaurants[0].address)
         
 
       } else {
