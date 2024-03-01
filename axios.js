@@ -1,6 +1,7 @@
 const axios = require('axios');
 
 axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF")
+
   .then(response => {
     const data = response.data
     const keys = Object.keys(data)
@@ -19,11 +20,6 @@ axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostco
       console.error('Error fetching data:', error);
     });
   
-  
-
-    
-
-
 
 // async function fetchDataFromExternalURL() {
 //     try {
