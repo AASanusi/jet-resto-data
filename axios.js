@@ -7,15 +7,18 @@ axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostco
     const data = response.data
     const keys = Object.keys(data)
 
-    if (keys.length > 1) {
+    if (keys) {
         const secondKey = keys[1];
-        // const restaurants = data[secondKey];
-        console.log(secondKey);
+        const restaurants = data[secondKey];
+        
+        
 
         
-       
-        // console.log("Restaurant name: ", restaurants[0].name)
-        // console.log("Address: ", restaurants[0].address)
+        
+        console.log("Restaurant name: ", restaurants[0].name)
+        console.log("Cuisines: ", restaurants[0].cuisines)
+        console.log("Ratings: ", restaurants[0].rating.starRating)
+        console.log("Address: ", restaurants[0].address)
         
 
       } else {
