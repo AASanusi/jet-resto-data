@@ -29,6 +29,7 @@ Please upload your completed solution to Github (bonus points if we can see git 
 
 ### Uncertainties and Assumptions:
 ![Screenshot of CORS block](assets/images/cors-blocking.png)
+
 I had issues with requesting data from the API using fetch. As fetch represents data via web browser, I encountered a challenge related to Cross-Origin Resource Sharing (CORS) blocking. I initially struggled with this issue, I thought of all types of ways I could bypass this. I eventually contacted JET to inquire whether this is an expected part of the assesment  or if it may be indicative of an unintended issue. I was thinking it's possible I missed instructions on how to navigate the API.
 
 After hours of research reading documentation and stack overflow, I later find out I could use the axios library to get the data.
