@@ -3,6 +3,18 @@ axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostco
   .then(response => {
     const data = data.response
     const keys = Object.keys(data)
+    if (keys.length > 0) {
+        const firstKey = keys[0];
+        const firstObject = data[firstKey];
+       
+        console.log(`First key: ${firstKey}, Value:`, firstObject);
+      } else {
+        console.log('The response does not contain any keys.');
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching data:', error);
+    });
     console.log(response.data);
   })
   .catch(error => {
