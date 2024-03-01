@@ -16,16 +16,40 @@ You will notice that a lot of data is returned in the ‘restaurant object’ (a
 Regardless of interface we’d like you to limit your shown data to the first 10 restaurants returned, we’re more interested in how you display each one rather than a huge list of data.
 Please upload your completed solution to Github (bonus points if we can see git history!).
 
-### Interface Used
+## Interface Used
+Will be using terminal interface.
 
-### How to build, compile and run solution
-- Setup the environment 
-- Create README.md file
-- Create your axios.js file that will contain all your code to request data from the API
-- Install 'Axios' library
-- Insert postcode into the API
-- Write your code using axios library to request and get data and to display these data in your terminal
-- In the terminal, insert 'node axios'
+## How to build, compile and run solution
+### Clone my Repo from Github
+To clone a repository from GitHub to your local machine, follow these steps:
+1. #### Navigate to Repository Page:
+    - Go to GitHub.com and navigate to the main page of the repository you want to clone.
+2. #### Get Repository URL  
+    - Above the list of files, click on the Code button.
+    - Copy the URL for the repository.
+3. #### Open Terminal:
+    - Open your Terminal or command-line interface.
+4. #### Change Directory:
+    - Change the current working directory in your Terminal to the location where you want the cloned repository to be saved.
+5. #### Clone Repository:
+    - In the Terminal, use the `git clone` command followed by the repository URL you copied earlier:
+
+```git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY```
+6. #### Press Enter:
+    - Press Enter to execute the git clone command.
+7. #### Access Cloned Repository:
+    - Once the cloning process is complete, you can access the cloned repository in the specified directory on your local machine.
+
+#### Run Solution
+1. Open your terminal.
+2. Navigate to the directory containing the axios.js file.
+3. Type the following command and press Enter: `node axios.js`.
+4. The terminal will display information about the first 10 restaurants, including four data points for each:
+    - Name
+    - Cuisines
+    - Rating (as a number)
+    - Address
+5. To view another set of 10 restaurants with the same four data points, change the API endpoint to a different postcode in the axios.js file and repeat step 3.
 
 ### Uncertainties and Assumptions:
 ![Screenshot of CORS block](assets/images/cors-blocking.png)
