@@ -18,6 +18,7 @@ axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostco
                 console.log("Cuisines: ", restaurants[i].cuisines)
                 console.log("Ratings: ", restaurants[i].rating.starRating)
                 console.log("Address: ", restaurants[i].address)
+                console.log("---------------------------------------------------------------------")
             }
 
 
