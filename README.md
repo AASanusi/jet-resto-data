@@ -1,7 +1,9 @@
 # JET Restaurant Data
 
 ## Overview
-I have been tasked to complete a coding exercise for JET Early Careers Software Engineer program ahead of the assessment day. Below is the problem and brief I've been given to carry out:
+I am thrilled to share with you an exciting opportunity I've been given as part of the JET Early Careers Software Engineer program. Ahead of the assessment day, I've been entrusted with an engaging coding exercise that promises to ignite my passion for problem-solving and innovation.
+
+Let's dive right into the challenge provided:
 
 **The Problem**: We are looking for you to find restaurant data and return this in an interface of your choice.
 Using the API provided you will need to send a postcode to return a set of data, you’ll need to filter this data to focus just on the restaurant data.
@@ -17,7 +19,7 @@ Regardless of interface we’d like you to limit your shown data to the first 10
 Please upload your completed solution to Github (bonus points if we can see git history!).
 
 ## Interface Used
-Will be using terminal interface.
+I have opted to showcase these four data points through the terminal interface. With this choice, I aim to leverage the simplicity and efficiency of the command-line environment to present the information in a clear and accessible manner. Get ready to dive into the data directly from your terminal!
 
 ## How to build, compile and run solution
 ### Clone my Repo from Github
