@@ -2,36 +2,34 @@ const axios = require('axios');
 
 axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF")
 
-  .then(response => {
+    .then(response => {
 
-    const data = response.data
-    const keys = Object.keys(data)
+        const data = response.data
+        const keys = Object.keys(data)
 
-    if (keys) {
-        const secondKey = keys[1];
-        const restaurants = data[secondKey];
-        
-        
+        if (keys) {
+            const secondKey = keys[1];
+            const restaurants = data[secondKey];
 
-        for(let i=0; i < 9; i++){
-            
+
+
+            for (let i = 0; i < 10; i++) {
+                console.log("Restaurant name: ", restaurants[i].name)
+                console.log("Cuisines: ", restaurants[i].cuisines)
+                console.log("Ratings: ", restaurants[i].rating.starRating)
+                console.log("Address: ", restaurants[i].address)
+            }
+
+
+        } else {
+            console.log('The response does not contain any keys.');
         }
-        
-        // console.log("Restaurant name: ", restaurants[0].name)
-        // console.log("Cuisines: ", restaurants[0].cuisines)
-        // console.log("Ratings: ", restaurants[0].rating.starRating)
-        // console.log("Address: ", restaurants[0].address)
-        
-
-      } else {
-        console.log('The response does not contain any keys.');
-      }
     })
 
     .catch(error => {
-      console.error('Error fetching data:', error);
+        console.error('Error fetching data:', error);
     });
-  
+
 
 
 
