@@ -11,13 +11,14 @@ app.listen(port, () => {
 });
 
 
-axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF")
+app.get('/restaurantdata', async (request, response) => {
 
-    .then(response => {
+    try {
+        const getApi = await axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF");
 
-        if (response.status === 200) {
-            const data = response.data
-            const keys = Object.keys(data)
+        if (getApi.status === 200) {
+            const data = getApi.data
+            const keys = Object.keys(data);
 
             const secondKey = keys[1];
             const restaurants = data[secondKey];
@@ -36,14 +37,14 @@ axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostco
             }
 
         } else {
-            console.log(`Failed to fetch data. Status: ${response.status}`)
+            console.log(`Failed to fetch data. Status: ${getApi.status}`)
         }
 
-    })
-
-    .catch(error => {
+    } catch (error) {
         console.error('Error fetching data:', error.message);
-    });
+    };
+})
+
 
 
 
