@@ -6,10 +6,6 @@ const port = 3000;
 
 app.use(express.static('public'));
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-});
-
 
 app.get('/restaurantdata', async (request, response) => {
 
@@ -26,11 +22,11 @@ app.get('/restaurantdata', async (request, response) => {
             if (restaurants.length > 0) {
 
                 for (let i = 0; i < 10; i++) {
-                    console.log("Restaurant name: ", restaurants[i].name)
-                    console.log("Cuisines: ", restaurants[i].cuisines)
-                    console.log("Ratings: ", restaurants[i].rating.starRating)
-                    console.log("Address: ", restaurants[i].address)
-                    console.log("---------------------------------------------------------------------")
+                    console.log("Restaurant name: ", restaurants[i].name);
+                    console.log("Cuisines: ", restaurants[i].cuisines);
+                    console.log("Ratings: ", restaurants[i].rating.starRating);
+                    console.log("Address: ", restaurants[i].address);
+                    console.log("---------------------------------------------------------------------");
                 }
             } else {
                 console.log('There are no results found');
@@ -44,6 +40,10 @@ app.get('/restaurantdata', async (request, response) => {
         console.error('Error fetching data:', error.message);
     };
 })
+
+app.listen(port, () => {
+    console.log(`Example app listening on port ${port}`)
+});
 
 
 
