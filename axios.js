@@ -1,8 +1,8 @@
 const axios = require('axios');
 const express = require('express');
 const app = express();
-
 const port = 3000;
+const fetch = require('node-fetch');
 
 app.use(express.static('public'));
 
