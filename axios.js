@@ -43,6 +43,7 @@ app.get('/restaurantdata', async (request, response) => {
         console.error('Error fetching data:', error.message);
     };
 
+
 });
 
 app.listen(port, () => {
