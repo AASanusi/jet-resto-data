@@ -7,13 +7,17 @@ async function getRestaurantData() {
         const response = await fetch("/restaurantdata");
 
         if (response.ok) {
-            const data = response
+            // Parse the response body as JSON
+            const data = response.json();
+            console.log("Restaurant data:", data);
         } else {
-            console.log("Response cannot be fetched")
+            // Handle error when response status is not ok
+            throw new Error(`Failed to fetch data. Status: ${response.status}`);
         }
 
     } catch (error) {
-        console.error(error.message)
+        // Handle other errors, such as network errors
+        console.error("Error fetching data: ", error.message);
     }
 } 
 
