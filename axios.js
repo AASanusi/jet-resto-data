@@ -34,18 +34,17 @@
 
 const axios = require('axios');
 
-axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/lll")
+axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/lol")
 
     .then(response => {
 
-        if (response.status === 200) {
+        const data = response.data
+        const keys = Object.keys(data)
 
-            const data = response.data
-            const keys = Object.keys(data)
-            
-            const secondKey = keys[1];
-            const restaurants = data[secondKey];
-            console.log(restaurants)
+        const secondKey = keys[1];
+        const restaurants = data[secondKey];
+
+        if (restaurants.length > 0) {
 
             for (let i = 0; i < 10; i++) {
                 console.log("Restaurant name: ", restaurants[i].name)
@@ -55,7 +54,7 @@ axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostco
                 console.log("---------------------------------------------------------------------")
             }
         } else {
-            console.log('Error:', response.status);
+            console.log('There are no results found');
         }
     })
 
