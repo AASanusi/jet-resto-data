@@ -32,6 +32,9 @@ app.get('/restaurantdata', async (request, response) => {
                 console.log('There are no results found');
             }
 
+            // Send the fetched data back to the client
+            response.status(200).json(restaurants);
+
         } else {
             console.log(`Failed to fetch data. Status: ${getApi.status}`)
         }
@@ -39,7 +42,8 @@ app.get('/restaurantdata', async (request, response) => {
     } catch (error) {
         console.error('Error fetching data:', error.message);
     };
-})
+
+});
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
