@@ -19,16 +19,7 @@ Regardless of interface we’d like you to limit your shown data to the first 10
 Please upload your completed solution to Github (bonus points if we can see git history!).
 
 ## Interface Used
-I have chosen to present these four data points using the web interface. By utilising the intuitive and user-friendly nature of the webpage environment, I aim to provide clear and accessible information. Get ready to explore the data directly from the webpage interface.
-
-### Frameworks, Libraries And Programs Used 
-#### [Node.js](https://nodejs.org/en)
-   - Node.js used as runtime environment to run javascript code.
-#### [Express](https://expressjs.com/)
-   - Express used to create the app for server side API.
-#### [Axios](https://axios-http.com/)
-   - Axios used to make http request.
-
+I have opted to showcase these four data points through the terminal interface. With this choice, I aim to leverage the simplicity and efficiency of the command-line environment to present the information in a clear and accessible manner. Get ready to dive into the data directly from your terminal!
 
 ## How to build, compile and run solution
 ### Clone my Repo from Github
