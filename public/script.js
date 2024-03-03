@@ -1,8 +1,15 @@
 async function getRestaurantData() {
     try {
 
-        const restoData = document.getElementById("resto-data").value;
-        const response = await fetch(`/restaurantdata?postcode=${restoData}`);
+        // Get the postcode value from the input field
+        const postcode = document.getElementById("resto-data").value;
+
+        // Check if the postcode is provided
+        if (!postcode) {
+            console.error("Postcode is required");
+            return;
+        }
+        const response = await fetch(`/restaurantdata?postcode=${postcode}`);
 
         if (response.ok) {
             // Parse the response body as JSON
@@ -41,4 +48,4 @@ async function getRestaurantData() {
     }
 }
 
-getRestaurantData();
+
