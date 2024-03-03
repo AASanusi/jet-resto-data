@@ -1,5 +1,3 @@
-console.log('client-side js working');
-
 async function getRestaurantData() {
     try {
         const response = await fetch("/restaurantdata");
@@ -15,10 +13,15 @@ async function getRestaurantData() {
             // Construct HTML for the first 10 restaurants
             let html = "";
             first10Restaurants.forEach(restaurant => {
-                html += `<div><strong>${restaurant.name}</strong></div>`;
-                html += `<div>Cuisines: ${restaurant.cuisines}</div>`;
-                html += `<div>Ratings: ${restaurant.rating.starRating}</div>`;
-                html += `<div>Address: ${restaurant.address}</div>`;
+                html += `<div><strong>Name:</strong>${restaurant.name}</div>`;
+                html += `<div><strong>Cuisines:</strong>`;
+                restaurant.cuisines.forEach(cuisine => {
+                    html += ` ${cuisine.name} (${cuisine.uniqueName}),`;
+                });
+                html = html.slice(0, -1); // Remove the last comma
+                html += `</div>`;
+                html += `<div><strong>Ratings:</strong> ${restaurant.rating.starRating}</div>`;
+                html += `<div><strong>Address:</strong> ${restaurant.address.city}, ${restaurant.address.firstLine}, ${restaurant.address.postalCode}, ${restaurant.address.location.type}, [${restaurant.address.location.coordinates.join(', ')}]</div>`;
                 html += `<hr>`;
             });
 
