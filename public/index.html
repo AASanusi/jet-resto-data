@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jet Resto Data</title>
+    <link href="restodata.ico" rel="icon" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    
 
 </head>
-<body>
 
-    <div id="header">
-        <h1>JET Restaurant Data</h1>
-    </div>
+<body class="gradient-background">
+    <main class="container">
+        <div id="header">
+            <h1>JET Restaurant Data</h1>
+        </div>
 
-    <input type="text" id="resto-data" placeholder="Enter Postcode"></input>
-    <button onclick="getRestaurantData()">Find Restaurant</button>
-    
-    <div id="restaurant-list">
-        <!-- Restaurant data inserted here via script.js -->
-    </div>
+        <input type="text" id="resto-data" placeholder="Enter Postcode" required></input>
+        <button onclick="getRestaurantData()">Find Restaurant</button>
+
+        <div id="restaurant-list">
+            <!-- Restaurant data inserted here via script.js -->
+        </div>
+    </main>
 
 
     <script src="script.js"></script>
 </body>
+
 </html>
