@@ -10,15 +10,32 @@ body {
     padding: 20px;
 }
 
+.gradient-background {
+    background-image: linear-gradient(#fa8001, #efeeea);
+    min-height: 100vh;
+}
+
 #header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 30px;
-    border: dashed #ff8000;
+}
+
+.container {
+    width: 80%;
+    margin: auto; 
+    padding: 20px;
+}
+
+input[type="text"],
+button {
+    display: block;
+    margin: 20px auto; 
+    padding: 10px; 
 }
 
 #header h1 {
     font-size: 24px;
-    color: #333;
+    color: #ffffff;
 }
 
 #restaurant-list {
@@ -27,3 +44,4 @@ body {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
