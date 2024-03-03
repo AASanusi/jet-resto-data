@@ -21,19 +21,6 @@ Please upload your completed solution to Github (bonus points if we can see git 
 ## Interface Used
 I have chosen to present these four data points using the web interface. By utilising the intuitive and user-friendly nature of the webpage environment, I aim to provide clear and accessible information. Get ready to explore the data directly from the webpage interface.
 
-## Features
-### Header
-![Header of the page image](/assets/images/jet-header.png)
-### Postcode Entry
-![Postcode entry image](/assets/images/postcode-entry.png)
-### Restaurant data
-![Restaurant data image](/assets/images/restaurants.png)
-## Technologies Used
-### Languages Used
-- [HTML5](https://en.wikipedia.org/wiki/HTML)
-- [CSS](https://en.wikipedia.org/wiki/CSS)
-- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-
 ### Frameworks, Libraries And Programs Used 
 #### [Node.js](https://nodejs.org/en)
    - Node.js used as runtime environment to run javascript code.
