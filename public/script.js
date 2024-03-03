@@ -1,6 +1,8 @@
 async function getRestaurantData() {
     try {
-        const response = await fetch("/restaurantdata");
+
+        const restoData = document.getElementById("resto-data").value;
+        const response = await fetch(`/restaurantdata?postcode=${restoData}`);
 
         if (response.ok) {
             // Parse the response body as JSON
