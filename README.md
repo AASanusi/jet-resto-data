@@ -43,23 +43,33 @@ To clone a repository from GitHub to your local machine, follow these steps:
     - Once the cloning process is complete, you can access the cloned repository in the specified directory on your local machine.
 
 #### Run Solution
-1. Open your terminal.
-2. Navigate to the directory containing the axios.js file.
-3. Type the following command and press Enter: `node axios.js`.
-4. The terminal will display information about the first 10 restaurants, including four data points for each:
-    - Name
-    - Cuisines
-    - Rating (as a number)
-    - Address
-5. To view another set of 10 restaurants with the same four data points, change the API endpoint to a different postcode in the axios.js file and repeat step 3.
+- Open your terminal this command: `brew install node` to install node.js. Using Homebrew installs npm (Node Package Manager) along with it.
+- To install Express carry out the follow commands: `npm init` to create package,json file for the application. Accept the defaults and making sure `entry point: axios.js`. Enter this command: `npm install express` to install Express
+- Install axios by enter this command into your terminal: `npm axios`
+- In the terminal enter the following command: `node.axios.js` to run the server
+- Terminal shows app is running on port: `3000`
+- Insert `localhost:3000` into the address bar in the browser and press 'Enter'
+- A blank webpage will open up with an input section and submit (Find Restaurant) button
+- Insert a postcode and view the first 10 restaurants with the following details:
+  - Name,
+  - Cuisines,
+  - Ratings,
+  - Address
 
 ### Uncertainties and Assumptions:
+- I faced challenges with fetching data from the API using fetch due to Cross-Origin Resource Sharing (CORS) restrictions in the web browser. After exploring different approaches and seeking clarification from JET, I realised I that I could use the axios library to overcome this issue.
+
 ![Screenshot of CORS block](assets/images/cors-blocking.png)
 
-I encountered challenges while attempting to request data from the API using fetch. Given that fetch operates within the web browser, I faced hurdles related to Cross-Origin Resource Sharing (CORS) restrictions. Initially perplexed by this issue, I explored various methods to circumvent it. Seeking clarification, I reached out to JET to ascertain whether this was an expected aspect of the assessment or indicative of an unforeseen issue. It occurred to me that I may have overlooked instructions on navigating the API.
+- There was no clarification regarding whether additional features or functionalities are expected beyond displaying the four specified data points.
 
-After investing hours in research, scouring documentation, and consulting Stack Overflow, I eventually discovered the solution: utilizing the axios library to fetch the data.
+- The specific formatting or styling preferences for displaying the restaurant data were ambiguous or not clearly defined.
 
 ### Future Improvement
+- **React Frontend Integration**: Seamlessly integrate React frontend into Node.js backend for improved development and management.
+- **Restaurant Website Links**: Enhance user experience by including direct links to restaurant websites for additional information and convenience.
+- **Map Feature**: Improve user engagement with location context by integrating a map feature for each restaurant.
+- **Pagination**: Implement pagination for navigating large sets of data, improving usability.
+- **Responsive Design**: Ensure mobile-friendly and responsive design for seamless user experience across devices.
 
 
