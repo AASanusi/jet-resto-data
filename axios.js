@@ -10,7 +10,16 @@ app.use(express.static('public'));
 app.get('/restaurantdata', async (request, response) => {
 
     try {
-        const getApi = await axios.get("https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/EC4M7RF");
+        // Get the value of the "postcode" query parameter from the request
+        const postcode = request.query.postcode;
+
+        if (!postcode) {
+            // Return an error response if the postcode is not provided
+            return response.status(400).send("Postcode parameter is required");
+        }
+
+        // Fetch restaurant data based on the provided postcode
+        const getApi = await axios.get(`https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/${postcode}`);
 
         if (getApi.status === 200) {
             const data = getApi.data
