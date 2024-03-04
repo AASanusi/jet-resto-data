@@ -18,6 +18,17 @@ You will notice that a lot of data is returned in the ‘restaurant object’ (a
 Regardless of interface we’d like you to limit your shown data to the first 10 restaurants returned, we’re more interested in how you display each one rather than a huge list of data.
 Please upload your completed solution to Github (bonus points if we can see git history!).
 
+**Assignment Criteria**
+
+Ensure you complete the below:
+- All four restaurant data points are displayed in your interface (name, cuisines,
+rating-as a number and address)
+- All interface types will be assessed the same, please focus on displaying the
+data
+- Add how to build, compile and run your solution into the README
+- Include any assumptions or things that were not clear to you in the README
+- Include any improvements you’d make to your solution in the README
+
 ## Interface Used
 I have chosen to present these four data points using the web interface. By utilising the intuitive and user-friendly nature of the webpage environment, I aim to provide clear and accessible information. Get ready to explore the data directly from the webpage interface!
 
