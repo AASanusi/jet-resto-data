@@ -56,7 +56,7 @@ I have chosen to present these four data points using the web interface. By util
 
 ## How to build, compile and run solution
 ### Clone my Repo from Github
-- To clone a repository from GitHub to your local machine, carry out the following command in your Terminal: 
+- To clone my repository from GitHub to your local machine, carry out the following command in your Terminal: 
 `git clone https://github.com/AASanusi/jet-resto-data.git`
 
 - Press Enter to execute the git clone command.
@@ -65,9 +65,9 @@ I have chosen to present these four data points using the web interface. By util
 
 #### Run Solution
 - Visit [Node.js](https://nodejs.org/en) website. Download and install.
-- Open your terminal to install Express. Type following commands: `npm init` to create package,json file for the application. Accept the defaults and making sure `entry point: axios.js`. Enter this command: `npm install express` to install Express
+- Open your terminal to install Express. Type following commands: `npm init` to create package.json file for the application. Accept the defaults and making sure `entry point: server.js`. Enter this command: `npm install express` to install Express
 - Install axios by enter this command into your terminal: `npm axios`
-- In the terminal enter the following command: `node axios.js` to run the server
+- In the terminal enter the following command: `node server.js` to run the server
 - Terminal shows app is running on port: `3000`
 - Insert `localhost:3000` into the address bar in the browser and press 'Enter'
 - A blank webpage will open up with an input section and submit (Find Restaurant) button
