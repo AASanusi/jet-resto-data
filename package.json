@@ -7,7 +7,7 @@
   "name": "jet-resto-data",
   "description": "## Overview I am thrilled to share with you an exciting opportunity I've been given as part of the JET Early Careers Software Engineer program. Ahead of the assessment day, I've been entrusted with an engaging coding exercise that promises to ignite my passion for problem-solving and innovation.",
   "version": "1.0.0",
-  "main": "axios.js",
+  "main": "server.js",
   "scripts": {
     "dev": "nodemon"
   },
