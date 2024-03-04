@@ -45,30 +45,18 @@ I have chosen to present these four data points using the web interface. By util
 
 ## How to build, compile and run solution
 ### Clone my Repo from Github
-To clone a repository from GitHub to your local machine, follow these steps:
-1. #### Navigate to Repository Page:
-    - Go to GitHub.com and navigate to the main page of the repository you want to clone.
-2. #### Get Repository URL  
-    - Above the list of files, click on the Code button.
-    - Copy the URL for the repository.
-3. #### Open Terminal:
-    - Open your Terminal or command-line interface.
-4. #### Change Directory:
-    - Change the current working directory in your Terminal to the location where you want the cloned repository to be saved.
-5. #### Clone Repository:
-    - In the Terminal, use the `git clone` command followed by the repository URL you copied earlier:
+- To clone a repository from GitHub to your local machine, carry out the following command in your Terminal: 
+`git clone https://github.com/AASanusi/jet-resto-data.git`
 
-```git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY```
-6. #### Press Enter:
-    - Press Enter to execute the git clone command.
-7. #### Access Cloned Repository:
-    - Once the cloning process is complete, you can access the cloned repository in the specified directory on your local machine.
+- Press Enter to execute the git clone command.
+
+- Once the cloning process is complete, you can access the cloned repository in the specified directory on your local machine.
 
 #### Run Solution
-- Open your terminal this command: `brew install node` to install node.js. Using Homebrew installs npm (Node Package Manager) along with it.
-- To install Express carry out the follow commands: `npm init` to create package,json file for the application. Accept the defaults and making sure `entry point: axios.js`. Enter this command: `npm install express` to install Express
+- Visit [Node.js](https://nodejs.org/en) website. Download and install.
+- Open your terminal to install Express. Type following commands: `npm init` to create package,json file for the application. Accept the defaults and making sure `entry point: axios.js`. Enter this command: `npm install express` to install Express
 - Install axios by enter this command into your terminal: `npm axios`
-- In the terminal enter the following command: `node.axios.js` to run the server
+- In the terminal enter the following command: `node axios.js` to run the server
 - Terminal shows app is running on port: `3000`
 - Insert `localhost:3000` into the address bar in the browser and press 'Enter'
 - A blank webpage will open up with an input section and submit (Find Restaurant) button
@@ -79,7 +67,7 @@ To clone a repository from GitHub to your local machine, follow these steps:
   - Address
 
 ### Uncertainties and Assumptions:
-- I faced challenges with fetching data from the API using fetch due to Cross-Origin Resource Sharing (CORS) restrictions in the web browser. After exploring different approaches and seeking clarification from JET, I realised I that I could use the axios library to overcome this issue.
+- I faced challenges with fetching data from the API using fetch due to Cross-Origin Resource Sharing (CORS) restrictions in the web browser. After exploring different approaches and seeking clarification from JET, I realised I that I could use node/express to set up a local server.
 
 ![Screenshot of CORS block](assets/images/cors-blocking.png)
 
