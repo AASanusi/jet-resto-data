@@ -4,10 +4,17 @@ async function getRestaurantData() {
         // Get the postcode value from the input field
         const postcode = document.getElementById("resto-data").value;
 
+        // Get the error message element
+        const errorMessage = document.getElementById('error-message');
+
         // Check if the postcode is provided
         if (!postcode) {
-            console.error("Postcode is required");
-            return;
+            // Show the error message
+            errorMessage.style.display = 'block';
+        } else {
+            // Hide the error message if the postcode is filled
+            errorMessage.style.display = 'none';
+            // Proceed with fetching restaurant data
         }
         const response = await fetch(`/restaurantdata?postcode=${postcode}`);
 
