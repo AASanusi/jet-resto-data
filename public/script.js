@@ -1,16 +1,18 @@
 async function getRestaurantData() {
+    // Get the error message element
+    const errorMessage = document.getElementById('error-message');
+
     try {
 
         // Get the postcode value from the input field
         const postcode = document.getElementById("resto-data").value;
 
-        // Get the error message element
-        const errorMessage = document.getElementById('error-message');
-
         // Check if the postcode is provided
         if (!postcode) {
-            // Show the error message
+            // Show the error message if the postcode is not provided
+            errorMessage.textContent = 'Postcode is required';
             errorMessage.style.display = 'block';
+            return; // Exit the function if postcode is not provided
         } else {
             // Hide the error message if the postcode is filled
             errorMessage.style.display = 'none';
@@ -46,12 +48,17 @@ async function getRestaurantData() {
 
         } else {
             // Handle error when response status is not ok
-            throw new Error(`Failed to fetch data. Status: ${response.status}`);
+            errorMessage.textContent = `Failed to fetch data. Status not ok!`;
+            errorMessage.style.display = 'block';
         }
 
     } catch (error) {
         // Handle other errors, such as network errors
         console.error("Error fetching data:", error.message);
+        // Set the error message text
+        errorMessage.textContent = `Error fetching data: ${error.message}`;
+        // Show the error message
+        errorMessage.style.display = 'block';
     }
 }
 
