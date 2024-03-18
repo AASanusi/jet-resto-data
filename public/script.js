@@ -25,12 +25,9 @@ async function getRestaurantData() {
             const data = await response.json();
             console.log("Restaurant data:", data);
 
-            // Display only the first 10 restaurants
-            const first10Restaurants = data.slice(0, 10);
-
             // Construct HTML for the first 10 restaurants
             let html = "";
-            first10Restaurants.forEach(restaurant => {
+            data.forEach(restaurant => {
                 html += `<div><strong>Name:</strong>${restaurant.name}</div>`;
                 html += `<div><strong>Cuisines:</strong>`;
                 restaurant.cuisines.forEach(cuisine => {

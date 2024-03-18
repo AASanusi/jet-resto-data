@@ -23,9 +23,7 @@ app.get('/restaurantdata', async (request, response) => {
 
         if (getApi.status === 200) {
             const data = getApi.data
-            // const keys = Object.keys(data);
-
-            // const secondKey = keys[1];
+            
             const restaurants = data['restaurants'];
 
             if (restaurants.length > 0) {
