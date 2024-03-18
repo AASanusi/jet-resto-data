@@ -19,14 +19,17 @@ app.get('/restaurantdata', async (request, response) => {
         }
 
         // Fetch restaurant data based on the provided postcode
-        const getApi = await axios.get(`https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/${postcode}?limit=10`);
+        const getApi = await axios.get(`https://uk.api.just-eat.io/discovery/uk/restaurants/enriched/bypostcode/${postcode}?limit=10&sort=rating`);
 
         if (getApi.status === 200) {
             const data = getApi.data
             
             const restaurants = data['restaurants'];
 
+            
             if (restaurants.length > 0) {
+                // Sort restaurants by rating in descending order
+                restaurants.sort((a, b) => b.rating.starRating - a.rating.starRating);
 
                 for (let i = 0; i < restaurants.length; i++) {
                     console.log("Restaurant name: ", restaurants[i].name);
