@@ -18,12 +18,14 @@ async function getRestaurantData() {
             errorMessage.style.display = 'none';
             // Proceed with fetching restaurant data
         }
-        const response = await fetch(`/restaurantdata?postcode=${postcode}`);
+        const response = await fetch(`/restaurantdata?postcode=${postcode}&sortBy=rating`);
 
         if (response.ok) {
             // Parse the response body as JSON
             const data = await response.json();
             console.log("Restaurant data:", data);
+
+            data.sort((a, b) => b.rating.starRating - a.rating.starRating)
 
             // Construct HTML for the first 10 restaurants
             let html = "";
