@@ -23,25 +23,19 @@ app.get('/restaurantdata', async (request, response) => {
 
         if (getApi.status === 200) {
             const data = getApi.data
-            
+
             const restaurants = data['restaurants'];
 
-            
-            if (restaurants.length > 0) {
 
-                for (let i = 0; i < restaurants.length; i++) {
-                    console.log("Restaurant name: ", restaurants[i].name);
-                    console.log("Cuisines: ", restaurants[i].cuisines);
-                    console.log("Ratings: ", restaurants[i].rating.starRating);
-                    console.log("Address: ", restaurants[i].address);
-                    console.log("---------------------------------------------------------------------");
-                }
+            // Check if there are restaurants in the array
+            if (restaurants.length > 0) {
+                // Send the fetched data back to the client
+                response.status(200).json(restaurants);
             } else {
                 console.log('There are no results found');
+                // Send an appropriate message back to the client
+                response.status(404).send("No restaurants found for the provided postcode");
             }
-
-            // Send the fetched data back to the client
-            response.status(200).json(restaurants);
 
         } else {
             console.log(`Failed to fetch data. Status: ${getApi.status}`)
