@@ -18,7 +18,7 @@ async function getRestaurantData() {
             // Proceed with fetching restaurant data
         }
 
-        const response = await fetch(`/restaurantdata?postcode=${postcode}&sortBy=rating`);
+        const response = await fetch(`/restaurantdata?postcode=${postcode}`);
 
         if (response.ok) {
             // Parse the response body as JSON
