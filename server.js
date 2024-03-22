@@ -23,7 +23,7 @@ app.get('/restaurantdata', async (request, response) => {
 
         if (getApi.status === 200) {
             const data = getApi.data
-
+            // Extracts the array of restaurant from the data
             const restaurants = data['restaurants'];
 
 
@@ -44,7 +44,6 @@ app.get('/restaurantdata', async (request, response) => {
     } catch (error) {
         console.error('Error fetching data:', error.message);
     };
-
 
 });
 
