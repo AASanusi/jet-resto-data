@@ -3,7 +3,6 @@ async function getRestaurantData() {
     const errorMessage = document.getElementById('error-message');
 
     try {
-
         // Get the postcode value from the input field
         const postcode = document.getElementById("resto-data").value;
 
@@ -18,6 +17,7 @@ async function getRestaurantData() {
             errorMessage.style.display = 'none';
             // Proceed with fetching restaurant data
         }
+
         const response = await fetch(`/restaurantdata?postcode=${postcode}&sortBy=rating`);
 
         if (response.ok) {
@@ -25,32 +25,36 @@ async function getRestaurantData() {
             const data = await response.json();
             console.log("Restaurant data:", data);
 
-            data.sort((a, b) => b.rating.starRating - a.rating.starRating)
+            if (data.length === 0) {
+                // Handle case when no restaurants are found for the provided postcode
+                errorMessage.textContent = 'No restaurants found for the provided postcode';
+                errorMessage.style.display = 'block';
+            } else {
+                data.sort((a, b) => b.rating.starRating - a.rating.starRating);
 
-            // Construct HTML for the first 10 restaurants
-            let html = "";
-            data.forEach(restaurant => {
-                html += `<div><strong>Name:</strong>${restaurant.name}</div>`;
-                html += `<div><strong>Cuisines:</strong>`;
-                restaurant.cuisines.forEach(cuisine => {
-                    html += ` ${cuisine.name} (${cuisine.uniqueName}),`;
+                // Construct HTML for the first 10 restaurants
+                let html = "";
+                data.forEach(restaurant => {
+                    html += `<div><strong>Name:</strong>${restaurant.name}</div>`;
+                    html += `<div><strong>Cuisines:</strong>`;
+                    restaurant.cuisines.forEach(cuisine => {
+                        html += ` ${cuisine.name} (${cuisine.uniqueName}),`;
+                    });
+                    html = html.slice(0, -1); // Remove the last comma
+                    html += `</div>`;
+                    html += `<div><strong>Ratings:</strong> ${restaurant.rating.starRating}</div>`;
+                    html += `<div><strong>Address:</strong> ${restaurant.address.city}, ${restaurant.address.firstLine}, ${restaurant.address.postalCode}, ${restaurant.address.location.type}, [${restaurant.address.location.coordinates.join(', ')}]</div>`;
+                    html += `<hr>`;
                 });
-                html = html.slice(0, -1); // Remove the last comma
-                html += `</div>`;
-                html += `<div><strong>Ratings:</strong> ${restaurant.rating.starRating}</div>`;
-                html += `<div><strong>Address:</strong> ${restaurant.address.city}, ${restaurant.address.firstLine}, ${restaurant.address.postalCode}, ${restaurant.address.location.type}, [${restaurant.address.location.coordinates.join(', ')}]</div>`;
-                html += `<hr>`;
-            });
 
-            // Set the HTML content of the #restaurant-list element
-            document.querySelector('#restaurant-list').innerHTML = html;
-
+                // Set the HTML content of the #restaurant-list element
+                document.querySelector('#restaurant-list').innerHTML = html;
+            }
         } else {
-            // Handle error when response status is not ok
+            // Handle other error cases when response status is not ok
             errorMessage.textContent = `Failed to fetch data. Status not ok!`;
             errorMessage.style.display = 'block';
         }
-
     } catch (error) {
         // Handle other errors, such as network errors
         console.error("Error fetching data:", error.message);
@@ -60,5 +64,3 @@ async function getRestaurantData() {
         errorMessage.style.display = 'block';
     }
 }
-
-

@@ -33,8 +33,6 @@ app.get('/restaurantdata', async (request, response) => {
                 response.status(200).json(restaurants);
             } else {
                 console.log('There are no results found');
-                // Send an appropriate message back to the client
-                response.status(404).send("No restaurants found for the provided postcode");
             }
 
         } else {
